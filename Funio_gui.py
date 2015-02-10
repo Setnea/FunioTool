@@ -110,7 +110,7 @@ if __name__ == "__main__":
                     feedback = qf.search_primer(typed_seq, all_file_list)
                     if len(outputFilePath) != 0:
                         qf.save_file(outputFilePath, feedback)
-                        print "\nData saved in choosed file."
+                        print "\nData saved in chosen file."
                     else:
                         pass
 
