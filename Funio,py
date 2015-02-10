@@ -71,6 +71,7 @@ def main():
         qf.save_file(args.o[0], feedback)
     else:
         qf.save_file(args.o[0], all_file_list)
+    print "Data saved in chosen file."
 
 if __name__ == "__main__":
 	main()
