@@ -40,7 +40,7 @@ class Funio():
 
 def main():
 
-    parser = argparse.ArgumentParser( description='\nFunio is a tool designed for removing artificial sequences putted during preparation of library for sequencing. The aim is realized by comparison of the sequence of nucleotides typed in command line and the output file from sequencer in fastq format. Funio requires fastq files, commonly used for storing biological sequences and its quality, to work properly.' )
+    parser = argparse.ArgumentParser( description='\nFunio is a tool designed for removing artificial sequences put during preparation of library for sequencing. The aim is realized by comparison of the sequence of nucleotides typed in command line and the output file from sequencer in fastq format. Funio requires fastq files, commonly used for storing biological sequences and its quality, to work properly.' )
     parser.add_argument( '-i',
 		metavar='<inputfile>', 
 		type=str, 
@@ -52,13 +52,13 @@ def main():
 		type=str, 
 		required=True, 
 		nargs=1, 
-		help='Specific the output filename containing the sequences and its quality data after removing specific sequences and corresponding quality data by filtering by given sequences' )
+		help='Specifies the output filename containing the sequences and its quality data after removing specific sequences and corresponding quality data by filtering by given sequences' )
     parser.add_argument( '-f', 
 		metavar='<type_sequence>', 
 		type=str, 
 		default=False, 
 		nargs=1, 
-		help='Specific the sequence that will be compared with the sequences from the input file. Capital letters are required.' )
+		help='Specifies the sequence that will be compared with the sequences from the input file. Capital letters are required.' )
 
     args = parser.parse_args()
 
