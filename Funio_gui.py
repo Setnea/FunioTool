@@ -100,19 +100,24 @@ if __name__ == "__main__":
             typed_seq = str(self.userexp.get())
             qf= Funio.Funio()
 
-            if len(inputFilePath) == 0:
-                print "\nChoose input file!"
-            else:
+            try:
                 all_file_list = qf.open_file(inputFilePath)
                 if len(typed_seq) == 0:
                     print "\nType sequence to compare with data."
                 else:
-                    feedback = qf.search_primer(typed_seq, all_file_list)
-                    if len(outputFilePath) != 0:
+                    iupac_marks = qf.code_reco(typed_seq)
+                    if not iupac_marks:
+                        feedback = qf.search_primer(typed_seq, all_file_list)
+                    else:
+                        new_sequences = qf.sequence_generator(typed_seq)
+                        feedback = qf.find_matches(new_sequences, all_file_list)
+                    try:
                         qf.save_file(outputFilePath, feedback)
                         print "\nData saved in chosen file."
-                    else:
-                        pass
+                    except IOError:
+                        print "Choose output file to save currently display data." 
+            except IOError:
+                print "Choose input file"
 
 
     root = Tk()
